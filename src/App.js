@@ -1,25 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+import TUCLogo from './images/TUCLogo.png';
+import { useState } from 'react';
+import ImageShow from './components/ImageShow';
+import Button from './components/Button';
+import randomMealDb from './api';
+import IngredientsList from './components/IngredientsList';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [ingredients, setIngredients] = useState([]);
+    const [measurements, setMeasurements] = useState([]);
+    const [image, setImage] = useState('');
+
+    const handleClick = async () => {
+        const result = await randomMealDb();
+        console.log(result);
+        let ingredientArray = [];
+        let measurementArray = [];
+        Object.entries(result[0]).forEach(([key, value]) =>
+            key.includes('strIngredient') && value ? ingredientArray.push(value) :null);
+        Object.entries(result[0]).forEach(([key, value]) =>
+            key.includes('strMeasure') && value ? measurementArray.push(value) :null);
+        setMeasurements(measurementArray);
+        setIngredients(ingredientArray);
+        setImage(result[0].strMealThumb);
+    };
+
+    return (
+        <div>
+            <img src={TUCLogo} alt="The Uninspired Cook Logo" className="logo"/>
+            <Button onClick={handleClick} />
+            <ImageShow image={image} />
+            <IngredientsList ingredients={ingredients} measurements={measurements}/>
+
+        </div>
+    );
 }
 
 export default App;
