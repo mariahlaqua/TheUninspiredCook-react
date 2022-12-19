@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### What 
 
-The Uninspired Cook gets a random recipe from [The Meal Database API](https://www.themealdb.com/api.php) and renders it. This app was previously made with vanilla JS, html and CSS. The repository is [here](https://github.com/mariahlaqua/TheUninspiredCook).
+The Uninspired Cook gets a random recipe from [The Meal Database API](https://www.themealdb.com/api.php) and renders it. This app was previously made with vanilla JS, html and CSS. The repository for that version is [here](https://github.com/mariahlaqua/TheUninspiredCook).
 
 These projects serve as a basis of comparison for individuals learning React after learning basic DOM manipulation with JS.
 
