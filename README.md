@@ -11,8 +11,8 @@ These projects serve as a basis of comparison for individuals learning React aft
 ### WIP
 
 This is obviously a work in progress. Here's the upcoming work:
--[] Fix rendering of measurements and ingredients
--[] Trigger get request on loading of page
--[] Create a diagram that compares two applications
--[] remove extra packages
--[] styling with Tailwind CSS
+- [ ] Fix rendering of measurements and ingredients
+- [ ] Trigger get request on loading of page
+- [ ] Create a diagram that compares two applications
+- [ ] remove extra packages
+- [ ] styling with Tailwind CSS
