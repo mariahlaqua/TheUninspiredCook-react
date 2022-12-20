@@ -1,7 +1,11 @@
-function ImageShow({ image }) {
+import { useContext } from "react";
+import MealContext from "../context/meal";
+
+function ImageShow() {
+    const { image } = useContext(MealContext);
     return (
         <div>
-            <img src={image} alt="the recipe"/>
+            <img src={image} alt="The finished recipe"/>
         </div>
     );
 }
