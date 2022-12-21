@@ -14,15 +14,7 @@ function App() {
     const handleClick = async () => {
         const result = await randomMealDb();
         console.log(result);
-        let ingredientArray = [];
-        let measurementArray = [];
-        Object.entries(result[0]).forEach(([key, value]) =>
-            key.includes('strIngredient') && value ? ingredientArray.push(value) :null);
-        Object.entries(result[0]).forEach(([key, value]) =>
-            key.includes('strMeasure') && value ? measurementArray.push(value) :null);
-        setMeasurements(measurementArray);
-        setIngredients(ingredientArray);
-        setImage(result[0].strMealThumb);
+        
     };
 
     return (
