@@ -5,7 +5,7 @@ function DirectionsShow(){
     const { directions, name } = useContext(MealContext);
     return (
         <div>
-        <h4>{name}</h4>
+        <h4 className="text-xl">{name}</h4>
         <p>{directions}</p>
         </div>
     )

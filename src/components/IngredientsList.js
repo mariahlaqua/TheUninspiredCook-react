@@ -1,4 +1,3 @@
-import './IngredientsList.css';
 import { useContext } from 'react';
 import MealContext from '../context/meal';
 import IngredientsShow from "./IngredientsShow";
@@ -12,12 +11,13 @@ function IngredientsList(){
         return <IngredientsShow key={index} ingredient={ingredient} />
     });
     const renderedMeasurements = measurements.map((measurement, index) => {
-        return <MeasurementShow key={index * 10} measurement={measurement} />
+        return <MeasurementShow key={index * 10} measurement={measurement} className="break-after-column"/>
     });
     return (
-        <div className="ingredients">
-            {renderedIngredients}
+        <div className="columns-2">
             {renderedMeasurements}
+            {renderedIngredients}
+            
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import './App.css';
+
 import TUCLogo from './images/TUCLogo.png';
 import { useContext, useEffect } from 'react';
 import MealContext from './context/meal';
@@ -22,12 +22,13 @@ function App() {
     };
 
     return (
-        <div>
-            <img src={TUCLogo} alt="The Uninspired Cook Logo" className="logo"/>
+        <div className="max-w-lg content-center mx-auto cols-2 gap-2">
+            <img src={TUCLogo} alt="The Uninspired Cook Logo" className="grid-break-after-column my-2"/>
             <Button onClick={handleClick} />
+            <IngredientsList />
             <DirectionsShow />
             <ImageShow />
-            <IngredientsList />
+            
 
         </div>
     );
