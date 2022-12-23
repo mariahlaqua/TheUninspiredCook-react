@@ -22,7 +22,7 @@ function App() {
     };
 
     return (
-        <div className="max-w-lg content-center mx-auto cols-2 gap-2">
+        <div className="max-w-lg content-center items-center mx-auto cols-2 gap-2">
             <img src={TUCLogo} alt="The Uninspired Cook Logo" className="grid-break-after-column my-2"/>
             <Button onClick={handleClick} />
             <IngredientsList />
