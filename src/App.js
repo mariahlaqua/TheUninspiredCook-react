@@ -5,6 +5,7 @@ import MealContext from './context/meal';
 import ImageShow from './components/ImageShow';
 import Button from './components/Button';
 import IngredientsList from './components/IngredientsList';
+import DirectionsShow from './components/DirectionsShow';
 
 function App() {
     const { fetchMeal } = useContext(MealContext);
@@ -24,6 +25,7 @@ function App() {
         <div>
             <img src={TUCLogo} alt="The Uninspired Cook Logo" className="logo"/>
             <Button onClick={handleClick} />
+            <DirectionsShow />
             <ImageShow />
             <IngredientsList />
 

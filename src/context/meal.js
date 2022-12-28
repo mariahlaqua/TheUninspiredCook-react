@@ -7,6 +7,8 @@ function Provider({ children }){
     const [ ingredients, setIngredients ] = useState([]);
     const [ measurements, setMeasurements ] = useState([]);
     const [ image, setImage ] = useState([]);
+    const [ directions, setDirections ] = useState("");
+    const [ name, setName ] = useState("");
 
 const fetchMeal = async () => {
     const response = await axios.get('https://www.themealdb.com/api/json/v1/1/random.php');
@@ -23,6 +25,8 @@ const fetchMeal = async () => {
     setIngredients(ingredientArray);
     setMeasurements(measurementArray);
     setImage(mealData.strMealThumb);
+    setDirections(mealData.strInstructions);
+    setName(mealData.strMeal);
 
 };
 
@@ -31,6 +35,8 @@ const mealDataToShare = {
     measurements,
     fetchMeal,
     image,
+    directions,
+    name,
 };
 
 return (
