@@ -1,18 +1,21 @@
 import './App.css';
 import TUCLogo from './images/TUCLogo.png';
-import { useState } from 'react';
+import { useContext, useEffect } from 'react';
+import MealContext from './context/meal';
 import ImageShow from './components/ImageShow';
 import Button from './components/Button';
-import randomMealDb from './api';
 import IngredientsList from './components/IngredientsList';
 
 function App() {
-    const [ingredients, setIngredients] = useState([]);
-    const [measurements, setMeasurements] = useState([]);
-    const [image, setImage] = useState('');
+    const { fetchMeal } = useContext(MealContext);
+
+    useEffect(() =>{
+        fetchMeal();
+    }, []);
+
 
     const handleClick = async () => {
-        const result = await randomMealDb();
+        const result = await fetchMeal();
         console.log(result);
         
     };
@@ -21,8 +24,8 @@ function App() {
         <div>
             <img src={TUCLogo} alt="The Uninspired Cook Logo" className="logo"/>
             <Button onClick={handleClick} />
-            <ImageShow image={image} />
-            <IngredientsList ingredients={ingredients} measurements={measurements}/>
+            <ImageShow />
+            <IngredientsList />
 
         </div>
     );

@@ -1,9 +1,12 @@
 import './IngredientsList.css';
+import { useContext } from 'react';
+import MealContext from '../context/meal';
 import IngredientsShow from "./IngredientsShow";
 import MeasurementShow from "./MeasurementShow";
 
 
-function IngredientsList({ ingredients, measurements }){
+function IngredientsList(){
+    const { ingredients, measurements } = useContext(MealContext);
     
     const renderedIngredients = ingredients.map((ingredient, index) => {
         return <IngredientsShow key={index} ingredient={ingredient} />
