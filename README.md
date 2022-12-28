@@ -11,9 +11,9 @@ These projects serve as a basis of comparison for individuals learning React aft
 ### WIP
 
 This is obviously a work in progress. Here's the upcoming work:
-- [ ] Move JSON parsing to API.js
+- [X] Move JSON parsing to API.js (actually moved to context folder and became context provider, renamed meal.js)
 - [ ] Fix rendering of measurements and ingredients
-- [ ] Trigger get request on loading of page
+- [X] Trigger get request on loading of page
 - [ ] Create a diagram that compares two applications
 - [ ] remove extra packages
 - [ ] styling with Tailwind CSS
