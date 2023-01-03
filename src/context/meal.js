@@ -31,9 +31,9 @@ const fetchMeal = async () => {
 };
 
 const mealDataToShare = {
+    fetchMeal,
     ingredients,
     measurements,
-    fetchMeal,
     image,
     directions,
     name,
